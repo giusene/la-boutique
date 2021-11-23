@@ -1,3 +1,5 @@
+import { slideGenerator } from './slider.js';
+
 function createProduct(parent, imgUrl, productTitle, textPrice) {
   const product = document.createElement("div");
   product.className = "product";
@@ -50,3 +52,4 @@ const getProductsList = async () => {
 }
 
 getProductsList();
+slideGenerator();
