@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mohave:wght@400;700&family=Press+Start+2P&display=swap");
 :root {
-  --main_color: #1396ab;
+  --main_color: #353535;
 }
 
 body {
@@ -46,10 +46,9 @@ strong {
 }
 
 .wrapper__products {
-  margin: 0 40px;
-  height: 38vh;
+  margin: 20px 40px;
   display: flex;
-  overflow-y: hidden;
+  flex-wrap: wrap;
 }
 
 .product {
@@ -60,10 +59,9 @@ strong {
   margin: 7.5px;
   padding: 10px;
 
-  min-width: 150px;
+  width: 150px;
 
   border: 2px solid rgb(50, 50, 50);
-  border-radius: 12px;
 
   opacity: 0.78;
   cursor: pointer;
@@ -81,5 +79,5 @@ strong {
 }
 
 .product p {
-  align-self: flex-start;
+  align-self: flex-end;
 }
