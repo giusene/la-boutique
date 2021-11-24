@@ -1,4 +1,5 @@
 import { slideGenerator } from './slider.js';
+import { headerScolling } from './header.js';
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
@@ -63,3 +64,4 @@ let productList = [];
 
 getProductsList();
 slideGenerator();
+headerScolling();
