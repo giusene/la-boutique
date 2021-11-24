@@ -37,7 +37,7 @@ function slideTransition() {
             heroWrapper.removeChild(firstSlide);
             heroWrapper.removeChild(firstOverlay);
         }, 400);
-        if (sliderCount === slides.length-2) {
+        if (sliderCount === slides.length-1) {
             sliderCount = 0;
             slideGenerator();
         } else {
