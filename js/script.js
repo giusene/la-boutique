@@ -1,12 +1,19 @@
 import { slideGenerator } from './slider.js';
 
-function createProduct(parent, imgUrl, productTitle, textPrice) {
+function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
   product.className = "product";
+  product.setAttribute('id', idProduct)
 
   createImg(product, imgUrl, productTitle);
   createText(product, productTitle, textPrice);
   parent.appendChild(product);
+
+  product.addEventListener('click', (e) => {
+    cartList.push(
+      productList.find((product) => parseInt(e.currentTarget.id) === product.id)
+    )
+  })
 }
 
 function createImg(parent, imgUrl, productTitle) {
@@ -27,29 +34,32 @@ function createText(parent, productTitle, textPrice) {
   parent.append(title, price);
 }
 
-// fetch("https://fakestoreapi.com/products") // <== importare la lista prodotti in modo remoto
-//   .then((response) => response.json())
-//   .then((data) => {
-//     products = data;
-//     renderProducts();
-//   });
+
 
 let products = [];
-const wrapperProducts = document.querySelector(".wrapper__products");
 
 function renderProducts(listItems) {
   listItems.map((product) => {
-    createProduct(wrapperProducts, product.image, product.title, product.price);
+    createProduct(wrapperProducts, product.image, product.title, product.price, product.id);
   });
 }
 
 const getProductsList = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
+  productList = data;
 
   return renderProducts(data);
-
 }
+
+
+const wrapperProducts = document.querySelector(".wrapper__products");
+const cartBtn = document.querySelector(".cart_btn");
+
+cartBtn.addEventListener('click', ()=> console.log(cartList))
+
+const cartList = [];
+let productList = [];
 
 getProductsList();
 slideGenerator();
