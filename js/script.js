@@ -1,20 +1,16 @@
 import { slideGenerator } from './slider.js';
 import { headerScolling } from './header.js';
+import { addToCart } from './cart.js';
+import { localProductsList } from './cart.js'
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
   product.className = "product";
-  product.setAttribute('id', idProduct)
 
   createImg(product, imgUrl, productTitle);
   createText(product, productTitle, textPrice);
+  createCartBtn(product, idProduct);
   parent.appendChild(product);
-
-  product.addEventListener('click', (e) => {
-    cartList.push(
-      productList.find((product) => parseInt(e.currentTarget.id) === product.id)
-    )
-  })
 }
 
 function createImg(parent, imgUrl, productTitle) {
@@ -35,9 +31,17 @@ function createText(parent, productTitle, textPrice) {
   parent.append(title, price);
 }
 
+function createCartBtn(parent, idProduct) {
+  const addToCartBtn = document.createElement('button');
+  addToCartBtn.textContent = 'Add to Cart';
+  addToCartBtn.setAttribute('id', idProduct);
+  parent.append(addToCartBtn);
 
+  addToCartBtn.addEventListener('click', () => {
+    addToCart(parseInt(addToCartBtn.id))
+  })
 
-let products = [];
+}
 
 function renderProducts(listItems) {
   listItems.map((product) => {
@@ -48,19 +52,13 @@ function renderProducts(listItems) {
 const getProductsList = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
-  productList = data;
+  localProductsList(data);
 
   return renderProducts(data);
 }
 
 
 const wrapperProducts = document.querySelector(".wrapper__products");
-const cartBtn = document.querySelector(".cart_btn");
-
-cartBtn.addEventListener('click', ()=> console.log(cartList))
-
-const cartList = [];
-let productList = [];
 
 getProductsList();
 slideGenerator();
