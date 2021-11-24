@@ -10,8 +10,6 @@ function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   parent.appendChild(product);
 
   product.addEventListener('click', (e) => {
-    // currentTarget seleziona l'elemento dell'add event listener a prescindere da cosa clicchi
-    // console.log(parseInt(e.currentTarget.id));
     cartList.push(
       productList.find((product) => parseInt(e.currentTarget.id) === product.id)
     )
@@ -58,7 +56,7 @@ const getProductsList = async () => {
 const wrapperProducts = document.querySelector(".wrapper__products");
 const cartBtn = document.querySelector(".cart_btn");
 
-cartBtn.addEventListener('click', ()=> { console.log(cartList) })
+cartBtn.addEventListener('click', ()=> console.log(cartList))
 
 const cartList = [];
 let productList = [];
