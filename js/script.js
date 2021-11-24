@@ -7,25 +7,25 @@ function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
   product.className = "product";
 
-  createImg(product, imgUrl, productTitle);
-  createText(product, productTitle, textPrice);
-  createCartBtn(product, idProduct);
+  const productOverlay = document.createElement('div');
+  productOverlay.className = "product-overlay";
+
+  createImg(product, imgUrl);
+  createText(productOverlay, productTitle, textPrice);
+  createCartBtn(productOverlay, idProduct);
   parent.appendChild(product);
+  product.appendChild(productOverlay);
 }
 
-function createImg(parent, imgUrl, productTitle) {
-  const image = document.createElement("img");
-  image.src = imgUrl;
-  image.alt = productTitle;
-
-  parent.appendChild(image);
+function createImg(parent, imgUrl) {
+  parent.style.backgroundImage = `url(${imgUrl})`
 }
 
 function createText(parent, productTitle, textPrice) {
   const title = document.createElement("h4");
   title.textContent = productTitle;
 
-  const price = document.createElement("strong");
+  const price = document.createElement("h5");
   price.textContent = `${textPrice} $`;
 
   parent.append(title, price);
