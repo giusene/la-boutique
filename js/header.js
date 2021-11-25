@@ -2,8 +2,10 @@ export function headerScolling() {
     window.onscroll = function(e) {
         if (e.path[1].pageYOffset !== 0) {
             header.classList.add('display');
+            menu.classList.remove('transparent');
         } else {
             header.classList.remove('display');
+            menu.classList.add('transparent');
         }
     };
 }
