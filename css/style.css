@@ -260,6 +260,10 @@ header .dx-elements .hamburger.show::after{
   visibility: hidden;
 }
 
+#catalog{
+  height: 64px;
+}
+
 .wrapper__titles {
   display: flex;
   justify-content: center;
@@ -280,6 +284,53 @@ header .dx-elements .hamburger.show::after{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.wrapper__filters{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: #000;
+  padding: 20px;
+  color: #fff;
+  font-weight: lighter;
+}
+
+.wrapper__filters input,
+.wrapper__filters select {
+  padding: 5px;
+  border: none;
+}
+
+.wrapper__filters button {
+  border: none;
+  height: 25px;
+  width: 25px;
+  margin-left: 1px;
+  background-color: #fff;
+  background-image: url(https://img.icons8.com/ios-filled/50/000000/search--v1.png);
+  background-size: cover;
+  color: transparent;
+  cursor: pointer;
+}
+
+.loading {
+  margin: 20px;
+  text-align: center;
+  border: 2px solid #000;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img{
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
 .product {
@@ -382,6 +433,15 @@ header .dx-elements .hamburger.show::after{
   100% {
       opacity: 1;
       right: 20px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
   }
 }
 
