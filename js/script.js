@@ -3,7 +3,8 @@ import { headerScolling } from './header.js';
 import { hamburgerMenu } from './header.js';
 import { addToCart } from './cart.js';
 import { localProductsList } from './cart.js';
-import { searchFunc } from './search-filter.js'
+import { searchFunc } from './search-filter.js';
+import { getTestimonials } from './testimonials.js'
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
@@ -68,3 +69,4 @@ getProductsList();
 slideGenerator();
 headerScolling();
 hamburgerMenu();
+getTestimonials();
