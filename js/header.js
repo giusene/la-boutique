@@ -12,12 +12,11 @@ export function hamburgerMenu() {
     hamburgerBtn.addEventListener('click', () => {
         menu.classList.toggle('show');
         hamburgerBtn.classList.toggle('show');
+        setTimeout(() => {
+            menu.classList.remove('show');
+            hamburgerBtn.classList.remove('show');
+        }, 4000)
     })
-
-    setTimeout(()=> {
-        menu.classList.remove('show');
-    }, 4000)
-
 }
 
 const menu = document.querySelector('.menu');
