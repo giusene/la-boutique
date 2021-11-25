@@ -315,7 +315,7 @@ header .dx-elements .hamburger.show::after{
 }
 
 .loading {
-  margin: 20px;
+  margin: 20px auto;
   text-align: center;
   border: 2px solid #000;
   padding: 20px;
@@ -450,22 +450,25 @@ header .dx-elements .hamburger.show::after{
   overflow-x: auto;
   max-width: 1000px;
   margin: auto;
+  text-align: center;
+}
+
+.wrapper_testimonials::-webkit-scrollbar {
+  width: 0em;
 }
 
 .wrapper_testimonials .testimonial{
-  min-width: 300px;
-  height: 300px;
   border-radius: 300px;
   background-color: #000;
   text-align: center;
   color: #fff;
   margin: 20px;
   padding: 20px;
-  overflow: hidden;
 }
 
 .wrapper_testimonials .testimonial img{
   border-radius: 100%;
+  width: 150px;
 }
 
 .wrapper_testimonials .testimonial .name{
@@ -585,4 +588,13 @@ footer {
   .wrapper .__overlay{
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255,0) 25%);
   }
+
+  .wrapper_testimonials {
+    width: 100%
+  }
+
+  .wrapper_testimonials .testimonial{
+    width: 100vw;
+  }
+
 }

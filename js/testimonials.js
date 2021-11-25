@@ -2,7 +2,6 @@ export const getTestimonials = async () => {
     const res = await fetch("https://testimonialapi.toolcarton.com/api");
     const data = await res.json();
     testimonialsRender(data)
-    console.log(data)
   }
 
 
@@ -17,9 +16,25 @@ function testimonialsRender(data) {
         <p class="name">${element.name}</p>
         <p class="designation">${element.designation}</p>
         <p class="rating">${element.rating}</p>
-        <p class="message">${element.message.substring(50, length)}</p>`;
+        <p class="message">${element.message.substring(47, length)}...</p>`;
         wrapperTestimonials.appendChild(testimonialDiv);
     });
+    setInterval(()=>{
+        wrapperTestimonials.scroll({
+            left: leftScroll,
+            behavior: 'smooth'
+        });
+        if (wrapperTestimonials.scrollLeft + wrapperTestimonials.offsetWidth < wrapperTestimonials.scrollWidth) {
+            leftScroll+=300;
+        } else {
+            leftScroll = 0; 
+        }
+    }, 5000)
 }
 
-const wrapperTestimonials = document.querySelector('.wrapper_testimonials')
+
+
+const wrapperTestimonials = document.querySelector('.wrapper_testimonials');
+let leftScroll = 0;
+
+
