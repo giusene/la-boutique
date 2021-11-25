@@ -14,6 +14,10 @@ export function hamburgerMenu() {
         hamburgerBtn.classList.toggle('show');
     })
 
+    setTimeout(()=> {
+        menu.classList.remove('show');
+    }, 4000)
+
 }
 
 const menu = document.querySelector('.menu');
