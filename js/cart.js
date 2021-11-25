@@ -104,7 +104,6 @@ cartBtn.addEventListener('click', () => {
 })
 
 
-
 window.onload = function () {
     if (window.localStorage.getItem('cart')) {
         cartList = JSON.parse(window.localStorage.getItem('cart'));
