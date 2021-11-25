@@ -10,15 +10,23 @@ export function headerScolling() {
 
 export function hamburgerMenu() {
     hamburgerBtn.addEventListener('click', () => {
-        menu.classList.toggle('show');
-        hamburgerBtn.classList.toggle('show');
-        setTimeout(() => {
+        const hideMenu = () => {
             menu.classList.remove('show');
             hamburgerBtn.classList.remove('show');
-        }, 4000)
+        }
+        const menuTimer = setTimeout(hideMenu, 4000)
+        menu.classList.toggle('show');
+        hamburgerBtn.classList.toggle('show');
+        if (hamburgerBtn.classList.contains('show')) {
+            menuTimer;
+        } else {
+            clearTimeout(menuTimer)
+        }
     })
 }
 
 const menu = document.querySelector('.menu');
 const hamburgerBtn = document.querySelector('.hamburger');
 const header = document.querySelector('header');
+
+    
