@@ -3,6 +3,7 @@ import { headerScolling } from './header.js';
 import { hamburgerMenu } from './header.js';
 import { addToCart } from './cart.js';
 import { localProductsList } from './cart.js';
+import { searchFunc } from './search-filter.js'
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
@@ -44,7 +45,8 @@ function createCartBtn(parent, idProduct) {
 
 }
 
-function renderProducts(listItems) {
+export function renderProducts(listItems) {
+  wrapperProducts.innerHTML = '';
   listItems.map((product) => {
     createProduct(wrapperProducts, product.image, product.title, product.price, product.id);
   });
@@ -54,6 +56,7 @@ const getProductsList = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
   localProductsList(data);
+  searchFunc(data);
 
   return renderProducts(data);
 }
