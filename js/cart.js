@@ -1,5 +1,5 @@
 export function localProductsList(data) {
-    productList = data.map((prod)=> {
+    productList = data.map((prod) => {
         prod.qty = 1;
         return prod;
     })
@@ -27,7 +27,7 @@ function showModal(productName) {
 
 function cartRender() {
     if (cartList.length === 0) {
-        domCartList.innerHTML = `<p>il tuo carrello è vuoto</p>`;  
+        domCartList.innerHTML = `<p>il tuo carrello è vuoto</p>`;
         cartBtn.className = 'cart-empty';
     } else {
         const totalProducts = cartList.reduce((a, b) => a + b.qty, 0);
@@ -43,7 +43,7 @@ function cartRender() {
             removeBtn.textContent = 'X';
             removeBtn.setAttribute('index', `${removeBtnIndex}`);
             cartItem.appendChild(removeBtn);
-            removeBtn.addEventListener('click', ()=> {
+            removeBtn.addEventListener('click', () => {
                 cartList.splice(parseInt(removeBtn.getAttribute('index')), 1);
                 window.localStorage.setItem('cart', JSON.stringify(cartList));
                 cartRender();
@@ -92,19 +92,23 @@ let cartList = [];
 let productList = [];
 
 cartBtn.addEventListener('click', () => {
+    const hideCart = () => domCartList.classList.remove('show');
+    const cartTimer = setTimeout(hideCart, 5000);
+
     domCartList.classList.toggle('show');
-    setTimeout(()=> {
-        domCartList.classList.remove('show');
-    }, 8000)
+    if (domCartList.classList.contains('show')) {
+        cartTimer;
+    } else {
+        clearTimeout(cartTimer)
+    }
 })
 
 
 
-
-window.onload = function() {
+window.onload = function () {
     if (window.localStorage.getItem('cart')) {
         cartList = JSON.parse(window.localStorage.getItem('cart'));
         cartRender();
     }
-  };
+};
 
