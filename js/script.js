@@ -1,7 +1,8 @@
 import { slideGenerator } from './slider.js';
 import { headerScolling } from './header.js';
+import { hamburgerMenu } from './header.js';
 import { addToCart } from './cart.js';
-import { localProductsList } from './cart.js'
+import { localProductsList } from './cart.js';
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
@@ -63,3 +64,4 @@ const wrapperProducts = document.querySelector(".wrapper__products");
 getProductsList();
 slideGenerator();
 headerScolling();
+hamburgerMenu();
