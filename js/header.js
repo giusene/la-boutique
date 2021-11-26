@@ -7,6 +7,16 @@ export function headerScolling() {
             header.classList.remove('display');
             menu.classList.add('transparent');
         }
+
+        //per parallax
+        if (mouseMove > e.path[1].pageYOffset) {
+            mouseMove = e.path[1].pageYOffset;
+            parallax.style.backgroundPositionY = (parallaxY+=5) + 'px';
+            
+        } else {
+            mouseMove = e.path[1].pageYOffset;
+            parallax.style.backgroundPositionY = (parallaxY-=5) + 'px';
+        }
     };
 }
 
@@ -27,8 +37,10 @@ export function hamburgerMenu() {
     })
 }
 
+let mouseMove = 0;
+let parallaxY = -400;
+
 const menu = document.querySelector('.menu');
 const hamburgerBtn = document.querySelector('.hamburger');
 const header = document.querySelector('header');
-
-    
+const parallax = document.querySelector('.parallax');
