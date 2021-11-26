@@ -765,4 +765,8 @@ footer {
     left: 20px;
   }
 
+  .parallax .parallax__text{
+    font-size: 20px;
+  }
+
 }
