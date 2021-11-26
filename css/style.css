@@ -127,7 +127,7 @@ header .dx-elements .cart-list.show{
 
 header .dx-elements .cart-list .cart-item{
   display: grid;
-  grid-template-columns: 6% 56% 6% 12% 12%;
+  grid-template-columns: 6% 52% 6% 14% 14%;
   column-gap: 10px;
   justify-content: space-between;
   align-items: center;

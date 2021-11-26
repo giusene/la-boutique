@@ -63,10 +63,12 @@ function cartRender() {
             cartItem.appendChild(productQty);
 
             const productPrice = document.createElement('div');
+            productPrice.style.textAlign = 'right'
             productPrice.textContent = product.price + ' $';
             cartItem.appendChild(productPrice);
 
             const productTotPrice = document.createElement('div');
+            productTotPrice.style.textAlign = 'right'
             productTotPrice.textContent = product.qty * product.price + ' $';
             cartItem.appendChild(productTotPrice);
 
