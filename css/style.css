@@ -348,6 +348,12 @@ header .dx-elements .hamburger.show::after{
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.35s ease;
+  opacity: 1;
+}
+
+.product.hidden {
+  opacity: 0;
+  transform: scale(0);
 }
 
 .product:hover {

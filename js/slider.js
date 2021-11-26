@@ -36,7 +36,7 @@ function slideTransition() {
         setTimeout(()=> {
             heroWrapper.removeChild(firstSlide);
             heroWrapper.removeChild(firstOverlay);
-        }, 400);
+        }, 300);
         if (sliderCount === slides.length-1) {
             sliderCount = 0;
             slideGenerator();
@@ -49,6 +49,11 @@ function slideTransition() {
 
 
 const slides = [
+    {
+        url: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        title: 'La moda non è un opinione',
+        subtitle: 'Lorem Ipsum'
+    },
     {
         url: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
         title: 'La moda non è un opinione',
