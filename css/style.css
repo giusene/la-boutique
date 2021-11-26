@@ -260,7 +260,7 @@ header .dx-elements .hamburger.show::after{
   visibility: hidden;
 }
 
-#catalog, #testimonials{
+#catalog, #testimonials, #contact{
   height: 64px;
 }
 
@@ -568,6 +568,56 @@ header .dx-elements .hamburger.show::after{
   filter: invert(1);
   margin-left: 5px;
 }
+
+.wrapper_contacts{
+  background-color: #ccc;
+  padding: 0 20px 50px 20px;
+}
+
+.wrapper_contacts form{
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wrapper_contacts form label{
+  font-weight: lighter;
+  margin: 20px 0 0 0;
+}
+
+.wrapper_contacts form input{
+  padding: 10px 10px;
+  border: none;
+}
+
+.wrapper_contacts form textarea{
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border: none;
+}
+
+.wrapper_contacts form button{
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 12px;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  margin: 10px 0;
+}
+
+.wrapper_contacts form button:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+
 
 footer {
   width: 100%;
