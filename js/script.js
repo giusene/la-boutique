@@ -9,6 +9,7 @@ import { getTestimonials } from './testimonials.js'
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
   product.className = "product";
+  product.classList.add('hidden');
 
   const productOverlay = document.createElement('div');
   productOverlay.className = "product-overlay";
@@ -16,8 +17,12 @@ function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   createImg(product, imgUrl);
   createText(productOverlay, productTitle, textPrice);
   createCartBtn(productOverlay, idProduct);
-  parent.appendChild(product);
   product.appendChild(productOverlay);
+
+  parent.appendChild(product);
+  setTimeout(()=>{
+    product.classList.remove('hidden');
+  }, 600)
 }
 
 function createImg(parent, imgUrl) {
@@ -78,8 +83,12 @@ function createCartBtn(parent, idProduct) {
 
 export function renderProducts(listItems) {
   wrapperProducts.innerHTML = '';
+  let productsTimer = 0;
   listItems.map((product) => {
-    createProduct(wrapperProducts, product.image, product.title, product.price, product.id);
+    setTimeout(()=> {
+      createProduct(wrapperProducts, product.image, product.title, product.price, product.id);
+    }, productsTimer);
+  productsTimer+=200;
   });
 }
 
