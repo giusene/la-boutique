@@ -462,7 +462,6 @@ header .dx-elements .hamburger.show::after{
   animation: modal 0.5s ease;
   animation-direction: alternate;
   right: 20px;
-  left: 20px;
   opacity: 1;
 }
 
@@ -640,6 +639,11 @@ footer {
 
   .wrapper_testimonials .testimonial{
     width: 100vw;
+  }
+
+  .cart-modal.show{
+    right: 20px;
+    left: 20px;
   }
 
 }
