@@ -35,13 +35,43 @@ function createText(parent, productTitle, textPrice) {
 }
 
 function createCartBtn(parent, idProduct) {
+  const addToCartDiv = document.createElement('div');
+  addToCartDiv.className = 'add-to-cart-div';
+  parent.append(addToCartDiv);
+
+  const plusBtn = document.createElement('a');
+  plusBtn.className = 'qty-btn';
+  plusBtn.textContent = '+';
+  const qtyInput = document.createElement('input');
+  qtyInput.setAttribute('type', 'number');
+  qtyInput.setAttribute('value', '1');
+  qtyInput.setAttribute('min', '1');
+  qtyInput.className = 'qty-input';
+  const minusBtn = document.createElement('a');
+  minusBtn.className = 'qty-btn';
+  minusBtn.textContent = '-';
   const addToCartBtn = document.createElement('button');
   addToCartBtn.textContent = 'Add to Cart';
   addToCartBtn.setAttribute('id', idProduct);
-  parent.append(addToCartBtn);
+
+  addToCartDiv.append(minusBtn);
+  addToCartDiv.append(qtyInput);
+  addToCartDiv.append(plusBtn);
+  addToCartDiv.append(addToCartBtn);
+
+  minusBtn.addEventListener('click', () => {
+    if (parseInt(qtyInput.value) > 1) {
+      qtyInput.value--
+    }
+  })
+
+  plusBtn.addEventListener('click', () => {
+    qtyInput.value++
+  })
 
   addToCartBtn.addEventListener('click', () => {
-    addToCart(parseInt(addToCartBtn.id))
+    addToCart(parseInt(addToCartBtn.id), parseInt(qtyInput.value));
+    qtyInput.value = '1'
   })
 
 }

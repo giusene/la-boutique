@@ -74,6 +74,7 @@ header .dx-elements .cart-empty{
   background-image: url('https://img.icons8.com/fluency-systems-regular/48/000000/shopping-cart.png');
   background-size: cover;
   z-index: 200;
+  cursor: pointer;
 }
 
 header .dx-elements .cart{
@@ -248,8 +249,7 @@ header .dx-elements .hamburger.show::after{
   height: 100%;
   background-size: cover;
   background-position: center;
-  transition: opacity 0.35s ease;
-  filter: saturate(1.2) brightness(1.5);
+  transition: all 0.35s ease;
 }
 
 .zero_opacity{
@@ -374,6 +374,44 @@ header .dx-elements .hamburger.show::after{
   max-height: 1000px;
 }
 
+.product .add-to-cart-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product .add-to-cart-div input{
+  width: 40px;
+  height: 34px;
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.product .add-to-cart-div input::-webkit-outer-spin-button,
+.product .add-to-cart-div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.product .add-to-cart-div input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.product .product-overlay .qty-btn{
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  margin: 0px;
+}
+
 .product .product-overlay button{
   background-color: #000;
   color: #fff;
@@ -409,7 +447,7 @@ header .dx-elements .hamburger.show::after{
   bottom: 20px;
   right: -2000px;
   border: 2px solid #000;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   opacity: 0;
 }
@@ -418,6 +456,7 @@ header .dx-elements .hamburger.show::after{
   animation: modal 0.5s ease;
   animation-direction: alternate;
   right: 20px;
+  left: 20px;
   opacity: 1;
 }
 

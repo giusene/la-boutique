@@ -1,25 +1,30 @@
-export function localProductsList(data) {
-    productList = data.map((prod) => {
-        prod.qty = 1;
-        return prod;
-    })
-}
+export function localProductsList(data){productList = data};
 
-export function addToCart(productId) {
+export function addToCart(productId, qtyValue) {
     const product = productList.find((product) => productId === product.id);
     const productInCart = cartList.find((product) => productId === product.id);
     if (productInCart === undefined) {
-        cartList.push(product);
+        const newProduct ={
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                description: product.description,
+                category: product.category,
+                image: product.image,
+                rating: product.rating,
+                qty: qtyValue,
+        }
+        cartList.push(newProduct);
     } else {
-        productInCart.qty++
+        productInCart.qty+=qtyValue
     }
-    showModal(product.title);
+    showModal(product.title, qtyValue);
     cartRender()
 }
 
-function showModal(productName) {
+function showModal(productName, qty) {
     cartModal.classList.add('show');
-    cartModal.textContent = `Hai aggiunto ${productName} al Carrello!`;
+    cartModal.innerHTML = `Hai aggiunto <b>${qty}</b> ${productName} al Carrello!`;
     setTimeout(() => {
         cartModal.classList.remove('show')
     }, 3000)
