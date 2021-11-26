@@ -66,20 +66,22 @@
       <div class="wrapper__titles">
         <h2>CONTACT</h2>
       </div>
-      <form>
+      <form id="contact-form">
         <label for="name">Name:</label>
-        <input type="text" placeholder="name" name="name" autocomplete="off">
+        <input type="text" placeholder="name" name="name" autocomplete="off" required>
         <label for="subject">Subject:</label>
-        <input type="text" placeholder="subject" name="subject" autocomplete="off">
+        <input type="text" placeholder="subject" name="subject" autocomplete="off" required>
         <label for="message">Message:</label>
-        <textarea name="message"></textarea>
+        <textarea name="message" placeholder="message" required></textarea>
         <button type="submit" class="button">Send</button>
       </form>
     </div>
     <footer>
       <p>Realizzazione Giuseppe Senettone</p>
     </footer>
-    <div class="cart-modal">
+    <div class="cart-modal"></div>
+    <div class="contact-modal">
+      <div class="loading"><img src="https://img.icons8.com/material-sharp/452/loading-sign.png" alt="loading-icon">Fake Sending Message...</div>
     </div>
     <script src="./js/script.js" type="module"></script>
   </body>
