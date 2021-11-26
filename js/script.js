@@ -4,7 +4,8 @@ import { hamburgerMenu } from './header.js';
 import { addToCart } from './cart.js';
 import { localProductsList } from './cart.js';
 import { searchFunc } from './search-filter.js';
-import { getTestimonials } from './testimonials.js'
+import { getTestimonials } from './testimonials.js';
+import { contactFunction } from './contact.js'
 
 function createProduct(parent, imgUrl, productTitle, textPrice, idProduct) {
   const product = document.createElement("div");
@@ -109,3 +110,4 @@ slideGenerator();
 headerScolling();
 hamburgerMenu();
 getTestimonials();
+contactFunction();
