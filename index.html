@@ -9,13 +9,13 @@
   </head>
   <body>
     <header>
-      <div class="logo strong"><p>LaBoutique</p></div>
+      <div class="logo"><a href="#home">LaBoutique</a></div>
       <div class="menu">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#catalog">Catalog</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="dx-elements">
@@ -60,6 +60,22 @@
       <div class="wrapper_testimonials">
         <div class="loading"><img src="https://img.icons8.com/material-sharp/452/loading-sign.png" alt="loading-icon">Waiting for API request...</div>
       </div>
+
+    <div id="contact"></div>
+    <div class="wrapper_contacts">
+      <div class="wrapper__titles">
+        <h2>CONTACT</h2>
+      </div>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" placeholder="name" name="name" autocomplete="off">
+        <label for="subject">Subject:</label>
+        <input type="text" placeholder="subject" name="subject" autocomplete="off">
+        <label for="message">Message:</label>
+        <textarea name="message"></textarea>
+        <button type="submit" class="button">Send</button>
+      </form>
+    </div>
     <footer>
       <p>Realizzazione Giuseppe Senettone</p>
     </footer>
