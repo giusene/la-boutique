@@ -11,11 +11,11 @@ export function headerScolling() {
         //per parallax
         if (mouseMove > e.path[1].pageYOffset) {
             mouseMove = e.path[1].pageYOffset;
-            parallax.style.backgroundPositionY = (parallaxY+=5) + 'px';
+            parallax.style.backgroundPositionY = (parallaxY+=2) + 'px';
             
         } else {
             mouseMove = e.path[1].pageYOffset;
-            parallax.style.backgroundPositionY = (parallaxY-=5) + 'px';
+            parallax.style.backgroundPositionY = (parallaxY-=2) + 'px';
         }
     };
 }
