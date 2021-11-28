@@ -1,4 +1,4 @@
-![LaBoutique](https://github.com/giusene/la-boutique/tree/main/css/img/laboutique.png)
+![LaBoutique](https://github.com/giusene/la-boutique/blob/main/img/laboutique.png)
 
 # LaBoutique
 
